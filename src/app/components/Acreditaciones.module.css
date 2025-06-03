@@ -1,0 +1,296 @@
+/* Acreditaciones.module.css - Versión Responsive Completa */
+
+.acreditaciones {
+  background-color: #e5e7eb;
+  padding: 60px 0;
+  position: relative;
+}
+
+.acreditacionesContent {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.acreditacionesTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.acreditacionesTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  border-radius: 2px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  min-width: 160px;
+  min-height: 100px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 15px;
+}
+
+.logoLink::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.logoLink:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.logoLink:hover::before {
+  opacity: 1;
+}
+
+.logoImage {
+  max-width: 120px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.logoLink:hover .logoImage {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.dividerLine {
+  width: 1px;
+  height: 50px;
+  background-color: #666;
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablets (1024px y menores) */
+@media (max-width: 1024px) {
+  .acreditaciones {
+    padding: 50px 0;
+  }
+  
+  .acreditacionesContent {
+    padding: 0 15px;
+  }
+  
+  .logos {
+    gap: 0;
+  }
+  
+  .logoLink {
+    min-width: 140px;
+    min-height: 90px;
+    padding: 15px;
+    margin: 0 10px;
+  }
+  
+  .logoImage {
+    max-width: 100px;
+    max-height: 60px;
+  }
+  
+  .dividerLine {
+    height: 40px;
+    margin: 0 15px;
+  }
+  
+  .acreditacionesTitle {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+}
+
+/* Tablets pequeñas (768px y menores) */
+@media (max-width: 768px) {
+  .acreditaciones {
+    padding: 40px 0;
+  }
+  
+  .logos {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .logoLink {
+    min-width: 140px;
+    min-height: 80px;
+    margin: 0;
+  }
+  
+  .logoImage {
+    max-width: 90px;
+    max-height: 50px;
+  }
+  
+  /* Ocultar líneas divisorias en tablets pequeñas */
+  .dividerLine {
+    display: none;
+  }
+  
+  .acreditacionesTitle {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+}
+
+/* Móviles (480px y menores) */
+@media (max-width: 480px) {
+  .acreditaciones {
+    padding: 30px 0;
+  }
+  
+  .acreditacionesContent {
+    padding: 0 10px;
+  }
+  
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-items: center;
+  }
+  
+  .logoLink {
+    min-width: 140px;
+    min-height: 70px;
+    padding: 12px;
+    width: 100%;
+    max-width: 160px;
+  }
+  
+  .logoImage {
+    max-width: 100px;
+    max-height: 45px;
+  }
+  
+  .acreditacionesTitle {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .acreditacionesTitle::after {
+    width: 60px;
+    height: 2px;
+  }
+}
+
+/* Móviles muy pequeños (360px y menores) */
+@media (max-width: 360px) {
+  .acreditaciones {
+    padding: 25px 0;
+  }
+  
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .logoLink {
+    min-width: 120px;
+    min-height: 65px;
+    padding: 10px;
+    max-width: 140px;
+  }
+  
+  .logoImage {
+    max-width: 80px;
+    max-height: 40px;
+  }
+  
+  .acreditacionesTitle {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logoLink {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.logoLink:nth-child(1) { animation-delay: 0.1s; }
+.logoLink:nth-child(3) { animation-delay: 0.2s; }
+.logoLink:nth-child(5) { animation-delay: 0.3s; }
+.logoLink:nth-child(7) { animation-delay: 0.4s; }
+
+/* Mejoras adicionales para touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .logoLink:hover {
+    transform: none;
+  }
+  
+  .logoLink:active {
+    transform: scale(0.95);
+  }
+  
+  .logoLink:hover .logoImage {
+    transform: none;
+  }
+}
+
+/* Landscape en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .logos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .logoLink {
+    min-width: 120px;
+    min-height: 70px;
+    flex: 1;
+    max-width: calc(50% - 10px);
+  }
+}
